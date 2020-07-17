@@ -1,0 +1,51 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*每个页面公共css */
+@font-face {
+  font-family: 'iconfont';  /* project id 1949385 */
+  src: url('//at.alicdn.com/t/font_1949385_il84m3e9bej.eot');
+  src: url('//at.alicdn.com/t/font_1949385_il84m3e9bej.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_1949385_il84m3e9bej.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_1949385_il84m3e9bej.woff') format('woff'),
+  url('//at.alicdn.com/t/font_1949385_il84m3e9bej.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_1949385_il84m3e9bej.svg#iconfont') format('svg');
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.iconyoujiantou:before {
+  content: "\e61c";
+}
+.iconjia:before {
+  content: "\e6a7";
+}
+.iconsaoyisao:before {
+  content: "\e649";
+}
+.iconxiala:before {
+  content: "\e6c1";
+}
+.iconsousuo:before {
+  content: "\e627";
+}
+.iconfanhui:before {
+  content: "\e601";
+}
+

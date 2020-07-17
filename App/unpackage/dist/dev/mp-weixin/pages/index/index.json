@@ -1,0 +1,8 @@
+{
+  "navigationStyle": "custom",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "liwei-header": "/components/header",
+    "user-item": "/pages/index/components/userItem"
+  }
+}

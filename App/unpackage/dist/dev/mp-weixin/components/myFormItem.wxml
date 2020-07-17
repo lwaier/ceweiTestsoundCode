@@ -1,0 +1,1 @@
+<view class="my_form_item data-v-20904cb2"><view class="title data-v-20904cb2">{{''+title+''}}</view><view class="data-v-20904cb2"><slot></slot></view></view>

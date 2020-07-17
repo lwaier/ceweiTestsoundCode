@@ -1,0 +1,8 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "liwei-header": "/components/header",
+    "liwei-my-form-item": "/components/myFormItem",
+    "editor": "/pages/edit/components/editor"
+  }
+}
