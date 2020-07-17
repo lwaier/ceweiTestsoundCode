@@ -65,7 +65,7 @@
 			<!-- 学生自传 -->
 			<view class="user_description user_zz">
 				<view class="user_description_title" style="padding-top: 8upx;width: 30upx;">学生描述</view>
-				<view style="width: 650upx;">
+				<view style="width: 650upx;" v-if="detail">
 					<Editor @getDetail="getDetailFn" :detail="detail"></Editor>
 				</view>
 			</view>
