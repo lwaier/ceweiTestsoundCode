@@ -1,10 +1,13 @@
 <template>
 	<view class="edit_index">
 		<!-- 页面头部 -->
-		<liwei-header :right="false">
+		<liwei-header>
 			  <template slot="middle">
 					<text>demo</text>
 			   </template>
+			   <template slot="right">
+			   		<text  @click="gobackHome">首页</text>
+			    </template>
 		</liwei-header>
 		<!-- form表单 -->
 		<view class="my_form">
@@ -63,10 +66,16 @@
 			</view>
 			
 			<!-- 学生自传 -->
-			<view class="user_description user_zz">
+			<view class="user_description user_zz" v-if="id">
 				<view class="user_description_title" style="padding-top: 8upx;width: 30upx;">学生描述</view>
 				<view style="width: 650upx;" v-if="detail">
 					<Editor @getDetail="getDetailFn" :detail="detail"></Editor>
+				</view>
+			</view>
+			<view class="user_description user_zz"  v-else>
+				<view class="user_description_title" style="padding-top: 8upx;width: 30upx;">学生描述</view>
+				<view style="width: 650upx;">
+					<Editor @getDetail="getDetailFn"></Editor>
 				</view>
 			</view>
 			
@@ -213,6 +222,11 @@
 				'saveUserInfo',//保存用户信息
 				'getOneUserInfo', //得到用户信息
 			]),
+			gobackHome(){
+				uni.reLaunch({
+					url:'/pages/index/index'
+				}); //返回首页 --此处禁止使用navigateTo--避免跳转次数累计溢出
+			},
 			//选择班级
 			pickerSelectFn(data,type){
 				let index = data.detail.value; //获取选择的索引
