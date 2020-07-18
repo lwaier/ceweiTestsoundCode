@@ -111,6 +111,7 @@
 			]),
 			...mapMutations([
 				'setIsEdit', //更新用户是否处于编辑状态
+				'setleftReset', //通知观察者初始化滑块位置
 			]),
 			//初始化数据
 			resetData(){
@@ -155,13 +156,14 @@
 			//删除用户
 			deleteFn(id,index){
 				this.deleteOneUserInfo({id,index})
+				this.setleftReset();//通知观察者初始化滑块位置
 			},
 			deleteTwoFn(id,index){
 				this.deleteOneUserInfo({id,index}).then(res=>{
 					if(res){
 						//当删除成功时 删掉搜索列表对应内容
 						this.searchStrArr.splice(index,1)
-						
+						this.setleftReset();//通知观察者初始化滑块位置
 					}
 				})
 			},
@@ -201,7 +203,7 @@
 				}else{
 					this.tipMore = '1'; //界面显示可加载更多数据
 				}
-			}); //获取用户信息列表
+			}); //获取用户信息列表 --
 		},
 		//下拉刷新数据
 		onPullDownRefresh() {

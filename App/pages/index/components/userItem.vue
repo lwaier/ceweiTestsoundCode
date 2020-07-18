@@ -31,7 +31,8 @@
 </template>
 
 <script>
-	import TouchDelet from '../minxis/touchDelete.js'
+	import TouchDelet from '../minxis/touchDelete.js';
+	import {mapState} from 'vuex'
 	export default {
 		mixins:[TouchDelet],
 		props:{
@@ -48,7 +49,12 @@
 						isEdit:false, //是否编辑
 					}
 				}
-			}
+			},
+		},
+		computed:{
+			...mapState([
+				'user', //当leftReset改变时 初始化滑块位置
+			])
 		},
 		filters:{
 			itemTile(item){
@@ -68,6 +74,11 @@
 					default :
 					return '一个没有感情的代码机器,熬夜写代码,腰酸背痛'
 				}
+			}
+		},
+		watch:{
+			'user.leftReset'(newStr){
+				this.left = 0; //初始化滑块位置
 			}
 		},
 		methods:{

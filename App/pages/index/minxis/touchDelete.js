@@ -1,8 +1,8 @@
 export default {
 	data(){
 		return{
-			left:'',
-			startX: null,
+			left:0, //滑动盒子margin-left初始化值
+			startX: null, //开始滑动x坐标值
 			delBtnWidth: 140, //删除按钮宽度单位（rpx）
 		}
 	},

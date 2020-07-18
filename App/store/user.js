@@ -6,6 +6,7 @@ export default {
 	state:{
 		userInfoList:'', //初始化为空
 		isRef:0, //是否刷新
+		leftReset:0, //是否重置左滑删除块位置 解决滑块左滑删除后,下一用户块仍处于左滑状态的bug
 	},
 	mutations:{
 		//保存用户信息
@@ -19,7 +20,7 @@ export default {
 				state.userInfoList = data; //普通刷新
 			}
 			
-			
+			state.leftReset++; //让观察者初始化滑块位置(保存用户信息时仍需通知)
 		},
 		
 		//修改用户是否处于修改状态
@@ -32,9 +33,14 @@ export default {
 				return item;
 			})
 		},
-		//让观察者更新
+		//让观察者更新数据
 		setIsRef(state){
 			state.isRef++
+		},
+		//让观察者初始化滑块位置
+		setleftReset(state){
+			console.log('我没加吗')
+			state.leftReset++
 		}
 	},
 	actions:{
