@@ -39,7 +39,6 @@ export default {
 		},
 		//让观察者初始化滑块位置
 		setleftReset(state){
-			console.log('我没加吗')
 			state.leftReset++
 		}
 	},
